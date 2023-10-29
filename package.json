@@ -1,0 +1,31 @@
+{
+  "name": "picture-manager",
+  "version": "1.0.0",
+  "description": "Electron-based application",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "npx tsc && electron-forge start",
+    "build": "npx tsc",
+    "test": "test",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "Ichinose",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "@types/node": "^16.18.59",
+    "electron": "^27.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "nuxi": "^3.9.1"
+  }
+}
