@@ -1,30 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
 
-const createWindow = () => {
-    const window = new BrowserWindow({
-        width: 800,
-        height: 600,
-        frame: false,
-        titleBarOverlay: {
-            color: '#2f3241',
-            symbolColor: '#74b1be'
-        },
-        titleBarStyle: 'hidden'
-    })
-
-    window.loadFile('index.html')
-}
-
-app.whenReady().then(() => {
-    createWindow()
-
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow()
-    })
-})
-
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit()
-})
-
-console.log('Hello World!!');
+createApp(App).use(store).use(router).mount('#app')
